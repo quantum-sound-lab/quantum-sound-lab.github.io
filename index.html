@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Sound Lab | Official Protocols</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #050505;
+            --panel: #141414;
+            --text: #e0e0e0;
+            --accent: #4A90E2; /* Bleu Clinique */
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--text);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR & LANG */
+        nav {
+            display: flex; justify-content: space-between; padding: 20px 40px; border-bottom: 1px solid #222;
+        }
+        .logo { color: var(--gold); font-weight: 700; letter-spacing: 2px; }
+        .lang-btn { background: none; border: 1px solid #444; color: #fff; cursor: pointer; padding: 5px 10px; }
+        .lang-btn.active { border-color: var(--gold); color: var(--gold); }
+
+        /* VISIBILITY */
+        [lang="en"] { display: none; }
+        body.en [lang="fr"] { display: none; }
+        body.en [lang="en"] { display: block; }
+
+        /* HERO */
+        header { text-align: center; padding: 100px 20px; background: radial-gradient(circle, #1a1a1a 0%, #000 80%); }
+        h1 { font-size: 3rem; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+        .subtitle { color: #888; max-width: 600px; margin: 0 auto 40px auto; }
+
+        /* GRID PACKS */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+        .card h3 { color: #fff; font-size: 1.8rem; margin-top: 0; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        .desc { font-style: italic; color: #aaa; margin-bottom: 20px; }
+
+        /* LISTE DÉROULANTE (ACCORDION) */
+        details {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin: 20px 0;
+            padding: 10px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--accent);
+            list-style: none; /* Enlève la flèche par défaut */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary::after { content: "▼"; font-size: 0.8rem; }
+        details[open] summary::after { content: "▲"; }
+        
+        .sound-list {
+            margin-top: 15px;
+            padding-left: 20px;
+            font-size: 0.85rem;
+            color: #ccc;
+            max-height: 300px;
+            overflow-y: auto; /* Scroll si la liste est longue */
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+        .sound-list li { margin-bottom: 5px; border-bottom: 1px solid #222; padding-bottom: 2px; }
+
+        /* PRIX & BOUTONS */
+        .price { font-size: 2.5rem; font-weight: bold; color: #fff; margin: 20px 0; }
+        .btn {
+            display: block; width: 100%; text-align: center;
+            background: var(--gold); color: #000;
+            padding: 15px; text-decoration: none; font-weight: bold;
+            text-transform: uppercase; margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #fff; }
+
+        /* BUNDLE */
+        .bundle {
+            grid-column: 1 / -1; /* Prend toute la largeur */
+            background: linear-gradient(135deg, #111 0%, #222 100%);
+            border: 2px solid var(--gold);
+            text-align: center;
+        }
+
+        footer { text-align: center; margin-top: 80px; padding: 40px; color: #555; font-size: 0.8rem; border-top: 1px solid #222; }
+    </style>
+</head>
+<body class="fr">
+
+    <nav>
+        <div class="logo">QUANTUM LAB</div>
+        <div>
+            <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+    </nav>
+
+    <header>
+        <h1 lang="fr">Fréquences Thérapeutiques 432Hz</h1>
+        <h1 lang="en">Therapeutic Frequencies 432Hz</h1>
+        <p class="subtitle" lang="fr">Technologie Bio-Résonance Rife & Schumann. Fichiers Masters WAV.</p>
+        <p class="subtitle" lang="en">Bio-Resonance Rife & Schumann Technology. Master WAV Files.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+
+            <div class="card">
+                <h3 lang="fr">PACK 1 : VITALITÉ</h3>
+                <h3 lang="en">PACK 1: VITALITY</h3>
+                
+                <p class="desc" lang="fr">Harmonisation, Sommeil, Stress & Hormones.</p>
+                <p class="desc" lang="en">Harmonization, Sleep, Stress & Hormones.</p>
+
+                <details>
+                    <summary lang="fr">VOIR LA LISTE DES SONS</summary>
+                    <summary lang="en">SEE SOUND LIST</summary>
+                    <ul class="sound-list">
+                        <li>Ménopause : Bouffées de Chaleur (Stop Flash)</li>
+                        <li>Ménopause : Équilibre Humeur & Hormones</li>
+                        <li>Sommeil Profond (Delta Waves)</li>
+                        <li>Insomnie Relief</li>
+                        <li>Anti-Stress (Cortisol Reducer)</li>
+                        <li>Cohérence Cardiaque</li>
+                        <li>Énergie Vitale (Fatigue Chronique)</li>
+                        <li>7 Chakras (Alignement Complet - 7 sons)</li>
+                        <li>Fréquence de l'Amour 528Hz</li>
+                        <li>Déblocage Émotionnel 396Hz</li>
+                        <li>... et +50 autres fréquences d'harmonie.</li>
+                    </ul>
+                </details>
+
+                <div class="price">47 €</div>
+                <a href="#" class="btn" lang="fr">ACHETER CE PACK</a>
+                <a href="#" class="btn" lang="en">BUY THIS PACK</a>
+            </div>
+
+            <div class="card">
+                <h3 lang="fr">PACK 2 : DÉTOX</h3>
+                <h3 lang="en">PACK 2: DETOX</h3>
+                
+                <p class="desc" lang="fr">Parasites, Protection EMF & Nettoyage.</p>
+                <p class="desc" lang="en">Parasites, EMF Shield & Cleansing.</p>
+
+                <details>
+                    <summary lang="fr">VOIR LA LISTE DES SONS</summary>
+                    <summary lang="en">SEE SOUND LIST</summary>
+                    <ul class="sound-list">
+                        <li><strong>Anti-Parasite Général (1150 Hz)</strong></li>
+                        <li>EMF Protection (Anti-Ondes 5G/Wifi)</li>
+                        <li>Nettoyage Émonctoires Complet</li>
+                        <li>Drainage Foie (Liver Cleanse)</li>
+                        <li>Drainage Reins (Kidney Flush)</li>
+                        <li>Détox Métaux Lourds</li>
+                        <li>Candida Albicans Cleanse</li>
+                        <li>Système Lymphatique (Flow)</li>
+                        <li>Renforcement Immunitaire</li>
+                        <li>Purification de l'Aura</li>
+                        <li>... et +50 autres fréquences de nettoyage.</li>
+                    </ul>
+                </details>
+
+                <div class="price">47 €</div>
+                <a href="#" class="btn" lang="fr">ACHETER CE PACK</a>
+                <a href="#" class="btn" lang="en">BUY THIS PACK</a>
+            </div>
+
+            <div class="card">
+                <h3 lang="fr">PACK 3 : RÉPARATION</h3>
+                <h3 lang="en">PACK 3: REPAIR</h3>
+                
+                <p class="desc" lang="fr">Dents, Douleurs, Os & Organes.</p>
+                <p class="desc" lang="en">Teeth, Pain, Bones & Organs.</p>
+
+                <details>
+                    <summary lang="fr">VOIR LA LISTE DES SONS</summary>
+                    <summary lang="en">SEE SOUND LIST</summary>
+                    <ul class="sound-list">
+                        <li><strong>Urgence Dentaire (Toothache Pain)</strong></li>
+                        <li>Régénération Dentaire (Email/Caries)</li>
+                        <li>Santé des Gencives</li>
+                        <li>Anti-Douleur Général (Pain Killer)</li>
+                        <li>Réparation Osseuse (Fractures/Ostéo)</li>
+                        <li>Dos & Colonne Vertébrale</li>
+                        <li>Sciatique Relief</li>
+                        <li>Estomac & Digestion (Acidité)</li>
+                        <li>Thyroïde (Régulation)</li>
+                        <li>Régénération Cellulaire (Anti-Age)</li>
+                        <li>... et +50 autres fréquences ciblées.</li>
+                    </ul>
+                </details>
+
+                <div class="price">47 €</div>
+                <a href="#" class="btn" lang="fr">ACHETER CE PACK</a>
+                <a href="#" class="btn" lang="en">BUY THIS PACK</a>
+            </div>
+
+            <div class="card bundle">
+                <h3 style="color:var(--gold)" lang="fr">LE PROTOCOLE COMPLET (3 PACKS)</h3>
+                <h3 style="color:var(--gold)" lang="en">THE COMPLETE PROTOCOL (3 PACKS)</h3>
+                <p lang="fr">Obtenez les 200 Sons + Fiches PDF.</p>
+                <p lang="en">Get all 200 Sounds + PDF Sheets.</p>
+                
+                <div class="price">97 € <span style="font-size:1.5rem; text-decoration:line-through; color:#666">141 €</span></div>
+                
+                <a href="#" class="btn" style="background:#fff; color:#000;" lang="fr">TÉLÉCHARGER L'INTÉGRALE</a>
+                <a href="#" class="btn" style="background:#fff; color:#000;" lang="en">DOWNLOAD FULL BUNDLE</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Quantum Sound Lab. <br>Disclaimer: Experimental audio tools. Not medical advice.</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.body.className = lang;
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(lang === 'fr') buttons[0].classList.add('active');
+            else buttons[1].classList.add('active');
+        }
+    </script>
+</body>
+</html>
